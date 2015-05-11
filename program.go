@@ -62,3 +62,12 @@ func (p Program) GetUniformLocation(name string) UniformLocation {
 func (p Program) BindFragDataLocation(color uint32, name string) {
 	gl.BindFragDataLocation(uint32(p), color, gl.Str(name+"\x00"))
 }
+
+//GetLinkStatus is an alias to glGetProgramiv(p, gl.LINK_STATUS, &status).
+//
+//Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glGetProgram.xml
+func (p Program) GetLinkStatus() bool {
+	var status int32
+	gl.GetProgramiv(uint32(p), gl.LINK_STATUS, &status)
+	return status == gl.TRUE
+}

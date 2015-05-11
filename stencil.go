@@ -8,27 +8,27 @@ type StencilObj struct{}
 
 var Stencil = StencilObj{}
 
-//Enable is an alias to gl.Enable(gl.STENCIL_TEST)
+//Enable is an alias to glEnable(gl.STENCIL_TEST)
 func (StencilObj) Enable() {
 	gl.Enable(gl.STENCIL_TEST)
 }
 
-//Disable is an alias to gl.Disable(gl.STENCIL_TEST)
+//Disable is an alias to glDisable(gl.STENCIL_TEST)
 func (StencilObj) Disable() {
 	gl.Disable(gl.STENCIL_TEST)
 }
 
-//Func is an alias to gl.StencilFunc(f, ref, mask)
+//Func is an alias to glStencilFunc(f, ref, mask)
 func (StencilObj) Func(f StencilFunc, ref int32, mask uint32) {
 	gl.StencilFunc(uint32(f), ref, mask)
 }
 
-//Op is an alias to gl.StencilOp(sfail, zfail, zpass)
+//Op is an alias to glStencilOp(sfail, zfail, zpass)
 func (StencilObj) Op(sfail, zfail, zpass StencilOp) {
 	gl.StencilOp(uint32(sfail), uint32(zfail), uint32(zpass))
 }
 
-//Mask is an alias to gl.StencilMask(mask)
+//Mask is an alias to glStencilMask(mask)
 func (StencilObj) Mask(mask uint32) {
 	gl.StencilMask(mask)
 }

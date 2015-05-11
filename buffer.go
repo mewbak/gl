@@ -15,39 +15,39 @@ type Buffer uint32
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glGenBuffers.xml
 func GenBuffer() Buffer {
-	var va uint32
-	gl.GenBuffers(1, &va)
-	return Buffer(va)
+	var buff uint32
+	gl.GenBuffers(1, &buff)
+	return Buffer(buff)
 }
 
 //GenBuffers is an alias to glGenBuffers(n, &b[0]).
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glGenBuffers.xml
 func GenBuffers(n int32) []Buffer {
-	bufs := make([]Buffer, n)
-	gl.GenBuffers(n, (*uint32)(&bufs[0]))
-	return bufs
+	buffs := make([]Buffer, n)
+	gl.GenBuffers(n, (*uint32)(&buffs[0]))
+	return buffs
 }
 
 //Bind is an alias to glBindBuffer(target, b).
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glBindBuffer.xml
-func (b Buffer) Bind(target uint32) {
-	gl.BindBuffer(target, uint32(b))
+func (b Buffer) Bind(target BufferTarget) {
+	gl.BindBuffer(uint32(target), uint32(b))
 }
 
 //Unbind is an alias to glBindBuffer(target, 0).
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glBindBuffer.xml
-func (Buffer) Unbind(target uint32) {
-	gl.BindBuffer(target, 0)
+func (Buffer) Unbind(target BufferTarget) {
+	gl.BindBuffer(uint32(target), 0)
 }
 
 //Data is an alias for glBufferData.
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glBufferData.xml
-func (Buffer) Data(target uint32, size int, data unsafe.Pointer, usage uint32) {
-	gl.BufferData(target, size, data, usage)
+func (Buffer) Data(target BufferTarget, size int, data unsafe.Pointer, usage uint32) {
+	gl.BufferData(uint32(target), size, data, usage)
 }
 
 //Delete is an alias to glDeleteBuffers(&b). The buffer should not be used after calling this.

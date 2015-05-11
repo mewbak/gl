@@ -78,3 +78,12 @@ func (TransformFeedback) Pause() {
 func (TransformFeedback) Resume() {
 	gl.ResumeTransformFeedback()
 }
+
+//BindBufferBase is an alias to glBindBufferBase
+//
+//Note: I'm not sure if this function is a transform feedback function or a buffer function.
+//
+//Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glBindBufferBase.xml
+func (TransformFeedback) BindBufferBase(target uint32, index uint32, buffer Buffer) {
+	gl.BindBufferBase(target, index, uint32(buffer))
+}
