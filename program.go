@@ -10,6 +10,7 @@ import (
 //Program is a high level representation of OpenGL program object.
 type Program uint32
 
+//CreateProgram is an alias to glCreateProgram.
 func CreateProgram() Program {
 	return Program(gl.CreateProgram())
 }

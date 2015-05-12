@@ -16,7 +16,7 @@ func GenRenderBuffer() RenderBuffer {
 	return RenderBuffer(buf)
 }
 
-//GenRenderBuffer is an alias to glGenRenderbuffers(n, &b).
+//GenRenderBuffers is an alias to glGenRenderbuffers(n, &b).
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glGenRenderbuffers.xml
 func GenRenderBuffers(n int32) []RenderBuffer {

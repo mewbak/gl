@@ -16,7 +16,7 @@ func GenFramebuffer() Framebuffer {
 	return Framebuffer(fbo)
 }
 
-//GenFramebuffer is an alias to glGenFramebuffers(n, &fbo).
+//GenFramebuffers is an alias to glGenFramebuffers(n, &fbo).
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glGenFramebuffers.xml
 func GenFramebuffers(n int32) []Framebuffer {

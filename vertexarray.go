@@ -71,14 +71,14 @@ func (VertexArray) VertexAttribPointer(index uint32, size int32, xtype uint32, n
 	gl.VertexAttribPointer(index, size, xtype, normalized, stride, pointer)
 }
 
-//glVertexAttribIPointer is an alias for glVertexAttribIPointer.
+//VertexAttribIPointer is an alias for glVertexAttribIPointer.
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribPointer.xml
 func (VertexArray) VertexAttribIPointer(index uint32, size int32, xtype uint32, stride int32, pointer unsafe.Pointer) {
 	gl.VertexAttribIPointer(index, size, xtype, stride, pointer)
 }
 
-//glVertexAttribLPointer is an alias for glVertexAttribLPointer.
+//VertexAttribLPointer is an alias for glVertexAttribLPointer.
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glVertexAttribPointer.xml
 func (VertexArray) VertexAttribLPointer(index uint32, size int32, xtype uint32, stride int32, pointer unsafe.Pointer) {
