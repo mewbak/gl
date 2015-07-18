@@ -20,13 +20,13 @@ func (stencilObj) Disable() {
 }
 
 //Func is an alias to glStencilFunc(f, ref, mask)
-func (stencilObj) Func(f CompareFunc, ref int32, mask uint32) {
-	gl.StencilFunc(uint32(f), ref, mask)
+func (stencilObj) Func(f uint32, ref int32, mask uint32) {
+	gl.StencilFunc(f, ref, mask)
 }
 
 //Op is an alias to glStencilOp(sfail, zfail, zpass)
-func (stencilObj) Op(sfail, zfail, zpass StencilOp) {
-	gl.StencilOp(uint32(sfail), uint32(zfail), uint32(zpass))
+func (stencilObj) Op(sfail, zfail, zpass uint32) {
+	gl.StencilOp(sfail, zfail, zpass)
 }
 
 //Mask is an alias to glStencilMask(mask)
@@ -34,17 +34,14 @@ func (stencilObj) Mask(mask uint32) {
 	gl.StencilMask(mask)
 }
 
-//StencilOp is an enum to represent all possible stencil op, prevent bad arguments
-type StencilOp uint32
-
 //Stencil op possible values
 const (
-	Keep     StencilOp = gl.KEEP
-	Zero               = gl.ZERO
-	Replace            = gl.REPLACE
-	Incr               = gl.INCR
-	IncrWrap           = gl.INCR_WRAP
-	Decr               = gl.DECR
-	DecrWrap           = gl.DECR_WRAP
-	Invert             = gl.INVERT
+	Keep     = gl.KEEP
+	Zero     = gl.ZERO
+	Replace  = gl.REPLACE
+	Incr     = gl.INCR
+	IncrWrap = gl.INCR_WRAP
+	Decr     = gl.DECR
+	DecrWrap = gl.DECR_WRAP
+	Invert   = gl.INVERT
 )

@@ -17,6 +17,9 @@ type Buffer uint32
 func GenBuffer() Buffer {
 	var buff uint32
 	gl.GenBuffers(1, &buff)
+	if safety {
+		CheckErr()
+	}
 	return Buffer(buff)
 }
 
@@ -26,28 +29,40 @@ func GenBuffer() Buffer {
 func GenBuffers(n int32) []Buffer {
 	buffs := make([]Buffer, n)
 	gl.GenBuffers(n, (*uint32)(&buffs[0]))
+	if safety {
+		CheckErr()
+	}
 	return buffs
 }
 
 //Bind is an alias to glBindBuffer(target, b).
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glBindBuffer.xml
-func (b Buffer) Bind(target BufferTarget) {
+func (b Buffer) Bind(target uint32) {
 	gl.BindBuffer(uint32(target), uint32(b))
+	if safety {
+		CheckErr()
+	}
 }
 
 //Unbind is an alias to glBindBuffer(target, 0).
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glBindBuffer.xml
-func (Buffer) Unbind(target BufferTarget) {
-	gl.BindBuffer(uint32(target), 0)
+func (Buffer) Unbind(target uint32) {
+	gl.BindBuffer(target, 0)
+	if safety {
+		CheckErr()
+	}
 }
 
 //Data is an alias for glBufferData.
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glBufferData.xml
-func (Buffer) Data(target BufferTarget, size int, data unsafe.Pointer, usage uint32) {
-	gl.BufferData(uint32(target), size, data, usage)
+func (Buffer) Data(target uint32, size int, data unsafe.Pointer, usage uint32) {
+	gl.BufferData(target, size, data, usage)
+	if safety {
+		CheckErr()
+	}
 }
 
 //Delete is an alias to glDeleteBuffers(&b). The buffer should not be used after calling this.
@@ -55,4 +70,7 @@ func (Buffer) Data(target BufferTarget, size int, data unsafe.Pointer, usage uin
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glDeleteBuffers.xml
 func (b Buffer) Delete() {
 	gl.DeleteBuffers(1, (*uint32)(&b))
+	if safety {
+		CheckErr()
+	}
 }
