@@ -4,13 +4,7 @@ import (
 	"github.com/go-gl/gl/v3.3-core/gl"
 )
 
-const (
-	DEPTH_TEST = gl.DEPTH_TEST
-)
-
+// Enable is an alis for glEnable(param).
 func Enable(param uint32) {
 	gl.Enable(param)
-	if safety {
-		CheckErr()
-	}
 }

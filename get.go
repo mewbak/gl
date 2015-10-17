@@ -10,67 +10,40 @@ var Get = GetObj{}
 
 func (GetObj) GetBooleanv(pname uint32, params *bool) {
 	gl.GetBooleanv(pname, params)
-	if safety {
-		CheckErr()
-	}
 }
 
 func (GetObj) GetDoublev(pname uint32, params *float64) {
 	gl.GetDoublev(pname, params)
-	if safety {
-		CheckErr()
-	}
 }
 
 func (GetObj) GetFloatv(pname uint32, params *float32) {
 	gl.GetFloatv(pname, params)
-	if safety {
-		CheckErr()
-	}
 }
 
 func (GetObj) GetIntegerv(pname uint32, params *int32) {
 	gl.GetIntegerv(pname, params)
-	if safety {
-		CheckErr()
-	}
 }
 
 func (GetObj) GetInteger64v(pname uint32, params *int64) {
 	gl.GetInteger64v(pname, params)
-	if safety {
-		CheckErr()
-	}
 }
 
 func (GetObj) GetBooleani_v(pname uint32, index uint32, data *bool) {
 	gl.GetBooleani_v(pname, index, data)
-	if safety {
-		CheckErr()
-	}
 }
 
 func (GetObj) GetIntegeri_v(pname uint32, index uint32, data *int32) {
 	gl.GetIntegeri_v(pname, index, data)
-	if safety {
-		CheckErr()
-	}
 }
 
 func (GetObj) GetInteger64i_v(pname uint32, index uint32, data *int64) {
 	gl.GetInteger64i_v(pname, index, data)
-	if safety {
-		CheckErr()
-	}
 }
 
 //params returns a single value indicating the active multitexture unit. The initial value is GL_TEXTURE0. See glActiveTexture.
 func (GetObj) ActiveTexture() int32 {
 	var params int32
 	gl.GetIntegerv(gl.ACTIVE_TEXTURE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -78,9 +51,6 @@ func (GetObj) ActiveTexture() int32 {
 func (GetObj) AliasedLineWidthRange() [2]float32 {
 	var params [2]float32
 	gl.GetFloatv(gl.ALIASED_LINE_WIDTH_RANGE, &params[0])
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -88,9 +58,6 @@ func (GetObj) AliasedLineWidthRange() [2]float32 {
 func (GetObj) SmoothLineWidthRange() [2]float32 {
 	var params [2]float32
 	gl.GetFloatv(gl.SMOOTH_LINE_WIDTH_RANGE, &params[0])
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -98,9 +65,6 @@ func (GetObj) SmoothLineWidthRange() [2]float32 {
 func (GetObj) SmoothLineWidthGranularity() float32 {
 	var params float32
 	gl.GetFloatv(gl.SMOOTH_LINE_WIDTH_GRANULARITY, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -108,9 +72,6 @@ func (GetObj) SmoothLineWidthGranularity() float32 {
 func (GetObj) ArrayBufferBinding() Buffer {
 	var params int32
 	gl.GetIntegerv(gl.ARRAY_BUFFER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return Buffer(params)
 }
 
@@ -118,9 +79,6 @@ func (GetObj) ArrayBufferBinding() Buffer {
 func (GetObj) Blend() bool {
 	var params bool
 	gl.GetBooleanv(gl.BLEND, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -128,9 +86,6 @@ func (GetObj) Blend() bool {
 func (GetObj) BlendColor() [4]float32 {
 	var params [4]float32
 	gl.GetFloatv(gl.BLEND_COLOR, &params[0])
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -138,9 +93,6 @@ func (GetObj) BlendColor() [4]float32 {
 func (GetObj) BlendDstAlpha() int32 {
 	var params int32
 	gl.GetIntegerv(gl.BLEND_DST_ALPHA, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -148,9 +100,6 @@ func (GetObj) BlendDstAlpha() int32 {
 func (GetObj) BlendDstRgb() int32 {
 	var params int32
 	gl.GetIntegerv(gl.BLEND_DST_RGB, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -158,9 +107,6 @@ func (GetObj) BlendDstRgb() int32 {
 func (GetObj) BlendEquationRgb() int32 {
 	var params int32
 	gl.GetIntegerv(gl.BLEND_EQUATION_RGB, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -168,9 +114,6 @@ func (GetObj) BlendEquationRgb() int32 {
 func (GetObj) BlendEquationAlpha() int32 {
 	var params int32
 	gl.GetIntegerv(gl.BLEND_EQUATION_ALPHA, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -178,9 +121,6 @@ func (GetObj) BlendEquationAlpha() int32 {
 func (GetObj) BlendSrcAlpha() int32 {
 	var params int32
 	gl.GetIntegerv(gl.BLEND_SRC_ALPHA, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -188,9 +128,6 @@ func (GetObj) BlendSrcAlpha() int32 {
 func (GetObj) BlendSrcRgb() int32 {
 	var params int32
 	gl.GetIntegerv(gl.BLEND_SRC_RGB, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -198,9 +135,6 @@ func (GetObj) BlendSrcRgb() int32 {
 func (GetObj) ColorClearValue() [4]float32 {
 	var params [4]float32
 	gl.GetFloatv(gl.COLOR_CLEAR_VALUE, &params[0])
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -208,9 +142,6 @@ func (GetObj) ColorClearValue() [4]float32 {
 func (GetObj) ColorLogicOp() bool {
 	var params bool
 	gl.GetBooleanv(gl.COLOR_LOGIC_OP, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -218,9 +149,6 @@ func (GetObj) ColorLogicOp() bool {
 func (GetObj) ColorWritemask() bool {
 	var params bool
 	gl.GetBooleanv(gl.COLOR_WRITEMASK, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -228,9 +156,6 @@ func (GetObj) ColorWritemask() bool {
 func (GetObj) CompressedTextureFormats() []int32 {
 	var params = make([]int32, Get.NumCompressedTextureFormats())
 	gl.GetIntegerv(gl.COMPRESSED_TEXTURE_FORMATS, &params[0])
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -238,9 +163,6 @@ func (GetObj) CompressedTextureFormats() []int32 {
 func (GetObj) CullFace() bool {
 	var params bool
 	gl.GetBooleanv(gl.CULL_FACE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -248,9 +170,6 @@ func (GetObj) CullFace() bool {
 func (GetObj) CurrentProgram() Program {
 	var params int32
 	gl.GetIntegerv(gl.CURRENT_PROGRAM, &params)
-	if safety {
-		CheckErr()
-	}
 	return Program(params)
 }
 
@@ -258,9 +177,6 @@ func (GetObj) CurrentProgram() Program {
 func (GetObj) DepthClearValue() float32 {
 	var params float32
 	gl.GetFloatv(gl.DEPTH_CLEAR_VALUE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -268,9 +184,6 @@ func (GetObj) DepthClearValue() float32 {
 func (GetObj) DepthFunc() int32 {
 	var params int32
 	gl.GetIntegerv(gl.DEPTH_FUNC, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -278,9 +191,6 @@ func (GetObj) DepthFunc() int32 {
 func (GetObj) DepthRange() [2]float32 {
 	var params [2]float32
 	gl.GetFloatv(gl.DEPTH_RANGE, &params[0])
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -288,9 +198,6 @@ func (GetObj) DepthRange() [2]float32 {
 func (GetObj) DepthTest() bool {
 	var params bool
 	gl.GetBooleanv(gl.DEPTH_TEST, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -298,9 +205,6 @@ func (GetObj) DepthTest() bool {
 func (GetObj) DepthWritemask() bool {
 	var params bool
 	gl.GetBooleanv(gl.DEPTH_WRITEMASK, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -308,9 +212,6 @@ func (GetObj) DepthWritemask() bool {
 func (GetObj) Dither() bool {
 	var params bool
 	gl.GetBooleanv(gl.DITHER, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -318,9 +219,6 @@ func (GetObj) Dither() bool {
 func (GetObj) Doublebuffer() bool {
 	var params bool
 	gl.GetBooleanv(gl.DOUBLEBUFFER, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -328,9 +226,6 @@ func (GetObj) Doublebuffer() bool {
 func (GetObj) DrawBuffer() int32 {
 	var params int32
 	gl.GetIntegerv(gl.DRAW_BUFFER, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -338,9 +233,6 @@ func (GetObj) DrawBuffer() int32 {
 func (GetObj) DrawFramebufferBinding() Framebuffer {
 	var params int32
 	gl.GetIntegerv(gl.DRAW_FRAMEBUFFER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return Framebuffer(params)
 }
 
@@ -348,9 +240,6 @@ func (GetObj) DrawFramebufferBinding() Framebuffer {
 func (GetObj) ReadFramebufferBinding() Framebuffer {
 	var params int32
 	gl.GetIntegerv(gl.READ_FRAMEBUFFER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return Framebuffer(params)
 }
 
@@ -358,9 +247,6 @@ func (GetObj) ReadFramebufferBinding() Framebuffer {
 func (GetObj) ElementArrayBufferBinding() Buffer {
 	var params int32
 	gl.GetIntegerv(gl.ELEMENT_ARRAY_BUFFER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return Buffer(params)
 }
 
@@ -368,9 +254,6 @@ func (GetObj) ElementArrayBufferBinding() Buffer {
 func (GetObj) RenderbufferBinding() RenderBuffer {
 	var params int32
 	gl.GetIntegerv(gl.RENDERBUFFER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return RenderBuffer(params)
 }
 
@@ -378,9 +261,6 @@ func (GetObj) RenderbufferBinding() RenderBuffer {
 func (GetObj) FragmentShaderDerivativeHint() int32 {
 	var params int32
 	gl.GetIntegerv(gl.FRAGMENT_SHADER_DERIVATIVE_HINT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -388,9 +268,6 @@ func (GetObj) FragmentShaderDerivativeHint() int32 {
 func (GetObj) LineSmooth() bool {
 	var params bool
 	gl.GetBooleanv(gl.LINE_SMOOTH, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -398,9 +275,6 @@ func (GetObj) LineSmooth() bool {
 func (GetObj) LineSmoothHint() int32 {
 	var params int32
 	gl.GetIntegerv(gl.LINE_SMOOTH_HINT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -408,9 +282,6 @@ func (GetObj) LineSmoothHint() int32 {
 func (GetObj) LineWidth() float32 {
 	var params float32
 	gl.GetFloatv(gl.LINE_WIDTH, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -418,9 +289,6 @@ func (GetObj) LineWidth() float32 {
 func (GetObj) LogicOpMode() int32 {
 	var params int32
 	gl.GetIntegerv(gl.LOGIC_OP_MODE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -428,9 +296,6 @@ func (GetObj) LogicOpMode() int32 {
 func (GetObj) Max3dTextureSize() int64 {
 	var params int64
 	gl.GetInteger64v(gl.MAX_3D_TEXTURE_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -438,9 +303,6 @@ func (GetObj) Max3dTextureSize() int64 {
 func (GetObj) MaxClipDistances() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_CLIP_DISTANCES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -448,9 +310,6 @@ func (GetObj) MaxClipDistances() int32 {
 func (GetObj) MaxCombinedFragmentUniformComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_COMBINED_FRAGMENT_UNIFORM_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -458,9 +317,6 @@ func (GetObj) MaxCombinedFragmentUniformComponents() int32 {
 func (GetObj) MaxCombinedTextureImageUnits() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_COMBINED_TEXTURE_IMAGE_UNITS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -468,9 +324,6 @@ func (GetObj) MaxCombinedTextureImageUnits() int32 {
 func (GetObj) MaxCombinedVertexUniformComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_COMBINED_VERTEX_UNIFORM_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -478,9 +331,6 @@ func (GetObj) MaxCombinedVertexUniformComponents() int32 {
 func (GetObj) MaxCombinedGeometryUniformComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -488,9 +338,6 @@ func (GetObj) MaxCombinedGeometryUniformComponents() int32 {
 func (GetObj) MaxVaryingComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_VARYING_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -498,9 +345,6 @@ func (GetObj) MaxVaryingComponents() int32 {
 func (GetObj) MaxCombinedUniformBlocks() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_COMBINED_UNIFORM_BLOCKS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -508,9 +352,6 @@ func (GetObj) MaxCombinedUniformBlocks() int32 {
 func (GetObj) MaxCubeMapTextureSize() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_CUBE_MAP_TEXTURE_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -518,9 +359,6 @@ func (GetObj) MaxCubeMapTextureSize() int32 {
 func (GetObj) MaxDrawBuffers() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_DRAW_BUFFERS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -528,9 +366,6 @@ func (GetObj) MaxDrawBuffers() int32 {
 func (GetObj) MaxDualSourceDrawBuffers() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_DUAL_SOURCE_DRAW_BUFFERS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -538,9 +373,6 @@ func (GetObj) MaxDualSourceDrawBuffers() int32 {
 func (GetObj) MaxElementsIndices() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_ELEMENTS_INDICES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -548,9 +380,6 @@ func (GetObj) MaxElementsIndices() int32 {
 func (GetObj) MaxElementsVertices() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_ELEMENTS_VERTICES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -558,9 +387,6 @@ func (GetObj) MaxElementsVertices() int32 {
 func (GetObj) MaxFragmentUniformComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_FRAGMENT_UNIFORM_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -568,9 +394,6 @@ func (GetObj) MaxFragmentUniformComponents() int32 {
 func (GetObj) MaxFragmentUniformBlocks() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_FRAGMENT_UNIFORM_BLOCKS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -578,9 +401,6 @@ func (GetObj) MaxFragmentUniformBlocks() int32 {
 func (GetObj) MaxFragmentInputComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_FRAGMENT_INPUT_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -588,9 +408,6 @@ func (GetObj) MaxFragmentInputComponents() int32 {
 func (GetObj) MinProgramTexelOffset() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MIN_PROGRAM_TEXEL_OFFSET, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -598,9 +415,6 @@ func (GetObj) MinProgramTexelOffset() int32 {
 func (GetObj) MaxProgramTexelOffset() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_PROGRAM_TEXEL_OFFSET, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -608,9 +422,6 @@ func (GetObj) MaxProgramTexelOffset() int32 {
 func (GetObj) MaxRectangleTextureSize() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_RECTANGLE_TEXTURE_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -618,9 +429,6 @@ func (GetObj) MaxRectangleTextureSize() int32 {
 func (GetObj) MaxTextureImageUnits() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_TEXTURE_IMAGE_UNITS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -628,9 +436,6 @@ func (GetObj) MaxTextureImageUnits() int32 {
 func (GetObj) MaxTextureLodBias() float32 {
 	var params float32
 	gl.GetFloatv(gl.MAX_TEXTURE_LOD_BIAS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -638,9 +443,6 @@ func (GetObj) MaxTextureLodBias() float32 {
 func (GetObj) MaxTextureSize() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_TEXTURE_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -648,9 +450,6 @@ func (GetObj) MaxTextureSize() int32 {
 func (GetObj) MaxRenderbufferSize() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_RENDERBUFFER_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -658,9 +457,6 @@ func (GetObj) MaxRenderbufferSize() int32 {
 func (GetObj) MaxArrayTextureLayers() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_ARRAY_TEXTURE_LAYERS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -668,9 +464,6 @@ func (GetObj) MaxArrayTextureLayers() int32 {
 func (GetObj) MaxTextureBufferSize() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_TEXTURE_BUFFER_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -678,9 +471,6 @@ func (GetObj) MaxTextureBufferSize() int32 {
 func (GetObj) MaxUniformBlockSize() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_UNIFORM_BLOCK_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -688,9 +478,6 @@ func (GetObj) MaxUniformBlockSize() int32 {
 func (GetObj) MaxVaryingFloats() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_VARYING_FLOATS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -698,9 +485,6 @@ func (GetObj) MaxVaryingFloats() int32 {
 func (GetObj) MaxVertexAttribs() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_VERTEX_ATTRIBS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -708,9 +492,6 @@ func (GetObj) MaxVertexAttribs() int32 {
 func (GetObj) MaxVertexTextureImageUnits() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -718,9 +499,6 @@ func (GetObj) MaxVertexTextureImageUnits() int32 {
 func (GetObj) MaxGeometryTextureImageUnits() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_GEOMETRY_TEXTURE_IMAGE_UNITS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -728,9 +506,6 @@ func (GetObj) MaxGeometryTextureImageUnits() int32 {
 func (GetObj) MaxVertexUniformComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_VERTEX_UNIFORM_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -738,9 +513,6 @@ func (GetObj) MaxVertexUniformComponents() int32 {
 func (GetObj) MaxVertexOutputComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_VERTEX_OUTPUT_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -748,9 +520,6 @@ func (GetObj) MaxVertexOutputComponents() int32 {
 func (GetObj) MaxGeometryUniformComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_GEOMETRY_UNIFORM_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -758,9 +527,6 @@ func (GetObj) MaxGeometryUniformComponents() int32 {
 func (GetObj) MaxSampleMaskWords() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_SAMPLE_MASK_WORDS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -768,9 +534,6 @@ func (GetObj) MaxSampleMaskWords() int32 {
 func (GetObj) MaxColorTextureSamples() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_COLOR_TEXTURE_SAMPLES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -778,9 +541,6 @@ func (GetObj) MaxColorTextureSamples() int32 {
 func (GetObj) MaxDepthTextureSamples() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_DEPTH_TEXTURE_SAMPLES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -788,9 +548,6 @@ func (GetObj) MaxDepthTextureSamples() int32 {
 func (GetObj) MaxIntegerSamples() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_INTEGER_SAMPLES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -798,9 +555,6 @@ func (GetObj) MaxIntegerSamples() int32 {
 func (GetObj) MaxServerWaitTimeout() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_SERVER_WAIT_TIMEOUT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -808,9 +562,6 @@ func (GetObj) MaxServerWaitTimeout() int32 {
 func (GetObj) MaxUniformBufferBindings() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_UNIFORM_BUFFER_BINDINGS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -818,9 +569,6 @@ func (GetObj) MaxUniformBufferBindings() int32 {
 func (GetObj) UniformBufferOffsetAlignment() int32 {
 	var params int32
 	gl.GetIntegerv(gl.UNIFORM_BUFFER_OFFSET_ALIGNMENT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -828,9 +576,6 @@ func (GetObj) UniformBufferOffsetAlignment() int32 {
 func (GetObj) MaxVertexUniformBlocks() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_VERTEX_UNIFORM_BLOCKS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -838,9 +583,6 @@ func (GetObj) MaxVertexUniformBlocks() int32 {
 func (GetObj) MaxGeometryUniformBlocks() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_GEOMETRY_UNIFORM_BLOCKS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -848,9 +590,6 @@ func (GetObj) MaxGeometryUniformBlocks() int32 {
 func (GetObj) MaxGeometryInputComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_GEOMETRY_INPUT_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -858,9 +597,6 @@ func (GetObj) MaxGeometryInputComponents() int32 {
 func (GetObj) MaxGeometryOutputComponents() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_GEOMETRY_OUTPUT_COMPONENTS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -868,9 +604,6 @@ func (GetObj) MaxGeometryOutputComponents() int32 {
 func (GetObj) MaxViewportDims() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAX_VIEWPORT_DIMS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -878,9 +611,6 @@ func (GetObj) MaxViewportDims() int32 {
 func (GetObj) NumCompressedTextureFormats() int32 {
 	var params int32
 	gl.GetIntegerv(gl.NUM_COMPRESSED_TEXTURE_FORMATS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -888,9 +618,6 @@ func (GetObj) NumCompressedTextureFormats() int32 {
 func (GetObj) PackAlignment() int32 {
 	var params int32
 	gl.GetIntegerv(gl.PACK_ALIGNMENT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -898,9 +625,6 @@ func (GetObj) PackAlignment() int32 {
 func (GetObj) PackImageHeight() int32 {
 	var params int32
 	gl.GetIntegerv(gl.PACK_IMAGE_HEIGHT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -908,9 +632,6 @@ func (GetObj) PackImageHeight() int32 {
 func (GetObj) PackLsbFirst() bool {
 	var params bool
 	gl.GetBooleanv(gl.PACK_LSB_FIRST, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -918,9 +639,6 @@ func (GetObj) PackLsbFirst() bool {
 func (GetObj) PackRowLength() int32 {
 	var params int32
 	gl.GetIntegerv(gl.PACK_ROW_LENGTH, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -928,9 +646,6 @@ func (GetObj) PackRowLength() int32 {
 func (GetObj) PackSkipImages() int32 {
 	var params int32
 	gl.GetIntegerv(gl.PACK_SKIP_IMAGES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -938,9 +653,6 @@ func (GetObj) PackSkipImages() int32 {
 func (GetObj) PackSkipPixels() int32 {
 	var params int32
 	gl.GetIntegerv(gl.PACK_SKIP_PIXELS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -948,9 +660,6 @@ func (GetObj) PackSkipPixels() int32 {
 func (GetObj) PackSkipRows() int32 {
 	var params int32
 	gl.GetIntegerv(gl.PACK_SKIP_ROWS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -958,9 +667,6 @@ func (GetObj) PackSkipRows() int32 {
 func (GetObj) PackSwapBytes() bool {
 	var params bool
 	gl.GetBooleanv(gl.PACK_SWAP_BYTES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -968,9 +674,6 @@ func (GetObj) PackSwapBytes() bool {
 func (GetObj) PixelPackBufferBinding() Buffer {
 	var params int32
 	gl.GetIntegerv(gl.PIXEL_PACK_BUFFER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return Buffer(params)
 }
 
@@ -978,9 +681,6 @@ func (GetObj) PixelPackBufferBinding() Buffer {
 func (GetObj) PixelUnpackBufferBinding() Buffer {
 	var params int32
 	gl.GetIntegerv(gl.PIXEL_UNPACK_BUFFER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return Buffer(params)
 }
 
@@ -988,9 +688,6 @@ func (GetObj) PixelUnpackBufferBinding() Buffer {
 func (GetObj) PointFadeThresholdSize() float32 {
 	var params float32
 	gl.GetFloatv(gl.POINT_FADE_THRESHOLD_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -998,9 +695,6 @@ func (GetObj) PointFadeThresholdSize() float32 {
 func (GetObj) PrimitiveRestartIndex() int32 {
 	var params int32
 	gl.GetIntegerv(gl.PRIMITIVE_RESTART_INDEX, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1008,9 +702,6 @@ func (GetObj) PrimitiveRestartIndex() int32 {
 func (GetObj) ProgramPointSize() bool {
 	var params bool
 	gl.GetBooleanv(gl.PROGRAM_POINT_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1018,9 +709,6 @@ func (GetObj) ProgramPointSize() bool {
 func (GetObj) ProvokingVertex() int32 {
 	var params int32
 	gl.GetIntegerv(gl.PROVOKING_VERTEX, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1028,9 +716,6 @@ func (GetObj) ProvokingVertex() int32 {
 func (GetObj) PointSize() float32 {
 	var params float32
 	gl.GetFloatv(gl.POINT_SIZE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1038,9 +723,6 @@ func (GetObj) PointSize() float32 {
 func (GetObj) PointSizeGranularity() float32 {
 	var params float32
 	gl.GetFloatv(gl.POINT_SIZE_GRANULARITY, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1048,9 +730,6 @@ func (GetObj) PointSizeGranularity() float32 {
 func (GetObj) PointSizeRange() [2]float32 {
 	var params [2]float32
 	gl.GetFloatv(gl.POINT_SIZE_RANGE, &params[0])
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1058,9 +737,6 @@ func (GetObj) PointSizeRange() [2]float32 {
 func (GetObj) PolygonOffsetFactor() float32 {
 	var params float32
 	gl.GetFloatv(gl.POLYGON_OFFSET_FACTOR, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1068,9 +744,6 @@ func (GetObj) PolygonOffsetFactor() float32 {
 func (GetObj) PolygonOffsetUnits() float32 {
 	var params float32
 	gl.GetFloatv(gl.POLYGON_OFFSET_UNITS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1078,9 +751,6 @@ func (GetObj) PolygonOffsetUnits() float32 {
 func (GetObj) PolygonOffsetFill() bool {
 	var params bool
 	gl.GetBooleanv(gl.POLYGON_OFFSET_FILL, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1088,9 +758,6 @@ func (GetObj) PolygonOffsetFill() bool {
 func (GetObj) PolygonOffsetLine() bool {
 	var params bool
 	gl.GetBooleanv(gl.POLYGON_OFFSET_LINE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1098,9 +765,6 @@ func (GetObj) PolygonOffsetLine() bool {
 func (GetObj) PolygonOffsetPoint() bool {
 	var params bool
 	gl.GetBooleanv(gl.POLYGON_OFFSET_POINT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1108,9 +772,6 @@ func (GetObj) PolygonOffsetPoint() bool {
 func (GetObj) PolygonSmooth() bool {
 	var params bool
 	gl.GetBooleanv(gl.POLYGON_SMOOTH, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1118,9 +779,6 @@ func (GetObj) PolygonSmooth() bool {
 func (GetObj) PolygonSmoothHint() int32 {
 	var params int32
 	gl.GetIntegerv(gl.POLYGON_SMOOTH_HINT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1128,9 +786,6 @@ func (GetObj) PolygonSmoothHint() int32 {
 func (GetObj) ReadBuffer() int32 {
 	var params int32
 	gl.GetIntegerv(gl.READ_BUFFER, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1138,9 +793,6 @@ func (GetObj) ReadBuffer() int32 {
 func (GetObj) SampleBuffers() int32 {
 	var params int32
 	gl.GetIntegerv(gl.SAMPLE_BUFFERS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1148,9 +800,6 @@ func (GetObj) SampleBuffers() int32 {
 func (GetObj) SampleCoverageValue() float32 {
 	var params float32
 	gl.GetFloatv(gl.SAMPLE_COVERAGE_VALUE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1158,9 +807,6 @@ func (GetObj) SampleCoverageValue() float32 {
 func (GetObj) SampleCoverageInvert() bool {
 	var params bool
 	gl.GetBooleanv(gl.SAMPLE_COVERAGE_INVERT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1168,9 +814,6 @@ func (GetObj) SampleCoverageInvert() bool {
 func (GetObj) SamplerBinding() int32 {
 	var params int32
 	gl.GetIntegerv(gl.SAMPLER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1178,9 +821,6 @@ func (GetObj) SamplerBinding() int32 {
 func (GetObj) Samples() int32 {
 	var params int32
 	gl.GetIntegerv(gl.SAMPLES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1188,9 +828,6 @@ func (GetObj) Samples() int32 {
 func (GetObj) ScissorBox() [4]int32 {
 	var params [4]int32
 	gl.GetIntegerv(gl.SCISSOR_BOX, &params[0])
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1198,9 +835,6 @@ func (GetObj) ScissorBox() [4]int32 {
 func (GetObj) ScissorTest() bool {
 	var params bool
 	gl.GetBooleanv(gl.SCISSOR_TEST, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1208,9 +842,6 @@ func (GetObj) ScissorTest() bool {
 func (GetObj) StencilBackFail() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_BACK_FAIL, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1218,9 +849,6 @@ func (GetObj) StencilBackFail() int32 {
 func (GetObj) StencilBackFunc() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_BACK_FUNC, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1228,9 +856,6 @@ func (GetObj) StencilBackFunc() int32 {
 func (GetObj) StencilBackPassDepthFail() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_BACK_PASS_DEPTH_FAIL, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1238,9 +863,6 @@ func (GetObj) StencilBackPassDepthFail() int32 {
 func (GetObj) StencilBackPassDepthPass() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_BACK_PASS_DEPTH_PASS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1248,9 +870,6 @@ func (GetObj) StencilBackPassDepthPass() int32 {
 func (GetObj) StencilBackRef() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_BACK_REF, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1258,9 +877,6 @@ func (GetObj) StencilBackRef() int32 {
 func (GetObj) StencilBackValueMask() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_BACK_VALUE_MASK, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1268,9 +884,6 @@ func (GetObj) StencilBackValueMask() int32 {
 func (GetObj) StencilBackWritemask() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_BACK_WRITEMASK, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1278,9 +891,6 @@ func (GetObj) StencilBackWritemask() int32 {
 func (GetObj) StencilClearValue() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_CLEAR_VALUE, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1288,9 +898,6 @@ func (GetObj) StencilClearValue() int32 {
 func (GetObj) StencilFail() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_FAIL, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1298,9 +905,6 @@ func (GetObj) StencilFail() int32 {
 func (GetObj) StencilFunc() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_FUNC, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1308,9 +912,6 @@ func (GetObj) StencilFunc() int32 {
 func (GetObj) StencilPassDepthFail() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_PASS_DEPTH_FAIL, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1318,9 +919,6 @@ func (GetObj) StencilPassDepthFail() int32 {
 func (GetObj) StencilPassDepthPass() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_PASS_DEPTH_PASS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1328,9 +926,6 @@ func (GetObj) StencilPassDepthPass() int32 {
 func (GetObj) StencilRef() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_REF, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1338,9 +933,6 @@ func (GetObj) StencilRef() int32 {
 func (GetObj) StencilTest() bool {
 	var params bool
 	gl.GetBooleanv(gl.STENCIL_TEST, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1348,9 +940,6 @@ func (GetObj) StencilTest() bool {
 func (GetObj) StencilValueMask() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_VALUE_MASK, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1358,9 +947,6 @@ func (GetObj) StencilValueMask() int32 {
 func (GetObj) StencilWritemask() int32 {
 	var params int32
 	gl.GetIntegerv(gl.STENCIL_WRITEMASK, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1368,9 +954,6 @@ func (GetObj) StencilWritemask() int32 {
 func (GetObj) Stereo() bool {
 	var params bool
 	gl.GetBooleanv(gl.STEREO, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1378,9 +961,6 @@ func (GetObj) Stereo() bool {
 func (GetObj) SubpixelBits() int32 {
 	var params int32
 	gl.GetIntegerv(gl.SUBPIXEL_BITS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1388,9 +968,6 @@ func (GetObj) SubpixelBits() int32 {
 func (GetObj) TextureBinding1D() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_1D, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1398,9 +975,6 @@ func (GetObj) TextureBinding1D() Texture {
 func (GetObj) TextureBinding1DArray() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_1D_ARRAY, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1408,9 +982,6 @@ func (GetObj) TextureBinding1DArray() Texture {
 func (GetObj) TextureBinding2D() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_2D, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1418,9 +989,6 @@ func (GetObj) TextureBinding2D() Texture {
 func (GetObj) TextureBinding2DArray() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_2D_ARRAY, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1428,9 +996,6 @@ func (GetObj) TextureBinding2DArray() Texture {
 func (GetObj) TextureBinding2DMultisample() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_2D_MULTISAMPLE, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1438,9 +1003,6 @@ func (GetObj) TextureBinding2DMultisample() Texture {
 func (GetObj) TextureBinding2DMultisampleArray() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1448,9 +1010,6 @@ func (GetObj) TextureBinding2DMultisampleArray() Texture {
 func (GetObj) TextureBinding3D() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_3D, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1458,9 +1017,6 @@ func (GetObj) TextureBinding3D() Texture {
 func (GetObj) TextureBindingBuffer() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_BUFFER, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1468,9 +1024,6 @@ func (GetObj) TextureBindingBuffer() Texture {
 func (GetObj) TextureBindingCubeMap() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_CUBE_MAP, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1478,9 +1031,6 @@ func (GetObj) TextureBindingCubeMap() Texture {
 func (GetObj) TextureBindingRectangle() Texture {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_BINDING_RECTANGLE, &params)
-	if safety {
-		CheckErr()
-	}
 	return Texture(params)
 }
 
@@ -1488,9 +1038,6 @@ func (GetObj) TextureBindingRectangle() Texture {
 func (GetObj) TextureCompressionHint() int32 {
 	var params int32
 	gl.GetIntegerv(gl.TEXTURE_COMPRESSION_HINT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1498,9 +1045,6 @@ func (GetObj) TextureCompressionHint() int32 {
 func (GetObj) Timestamp() int64 {
 	var params int64
 	gl.GetInteger64v(gl.TIMESTAMP, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1508,9 +1052,6 @@ func (GetObj) Timestamp() int64 {
 func (GetObj) TransformFeedbackBufferBinding() TransformFeedback {
 	var params int32
 	gl.GetIntegerv(gl.TRANSFORM_FEEDBACK_BUFFER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return TransformFeedback(params)
 }
 
@@ -1518,9 +1059,6 @@ func (GetObj) TransformFeedbackBufferBinding() TransformFeedback {
 func (GetObj) TransformFeedbackBufferStart(index uint32) int64 {
 	var params int64
 	gl.GetInteger64i_v(gl.TRANSFORM_FEEDBACK_BUFFER_START, index, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1528,9 +1066,6 @@ func (GetObj) TransformFeedbackBufferStart(index uint32) int64 {
 func (GetObj) TransformFeedbackBufferSize(index uint32) int64 {
 	var params int64
 	gl.GetInteger64i_v(gl.TRANSFORM_FEEDBACK_BUFFER_SIZE, index, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1538,9 +1073,6 @@ func (GetObj) TransformFeedbackBufferSize(index uint32) int64 {
 func (GetObj) UniformBufferBinding() Buffer {
 	var params int32
 	gl.GetIntegerv(gl.UNIFORM_BUFFER_BINDING, &params)
-	if safety {
-		CheckErr()
-	}
 	return Buffer(params)
 }
 
@@ -1548,9 +1080,6 @@ func (GetObj) UniformBufferBinding() Buffer {
 func (GetObj) UniformBufferStart(index uint32) int64 {
 	var params int64
 	gl.GetInteger64i_v(gl.UNIFORM_BUFFER_START, index, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1558,9 +1087,6 @@ func (GetObj) UniformBufferStart(index uint32) int64 {
 func (GetObj) UniformBufferSize(index uint32) int64 {
 	var params int64
 	gl.GetInteger64i_v(gl.UNIFORM_BUFFER_SIZE, index, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1568,9 +1094,6 @@ func (GetObj) UniformBufferSize(index uint32) int64 {
 func (GetObj) UnpackAlignment() int32 {
 	var params int32
 	gl.GetIntegerv(gl.UNPACK_ALIGNMENT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1578,9 +1101,6 @@ func (GetObj) UnpackAlignment() int32 {
 func (GetObj) UnpackImageHeight() int32 {
 	var params int32
 	gl.GetIntegerv(gl.UNPACK_IMAGE_HEIGHT, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1588,9 +1108,6 @@ func (GetObj) UnpackImageHeight() int32 {
 func (GetObj) UnpackLsbFirst() bool {
 	var params bool
 	gl.GetBooleanv(gl.UNPACK_LSB_FIRST, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1598,9 +1115,6 @@ func (GetObj) UnpackLsbFirst() bool {
 func (GetObj) UnpackRowLength() int32 {
 	var params int32
 	gl.GetIntegerv(gl.UNPACK_ROW_LENGTH, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1608,9 +1122,6 @@ func (GetObj) UnpackRowLength() int32 {
 func (GetObj) UnpackSkipImages() int32 {
 	var params int32
 	gl.GetIntegerv(gl.UNPACK_SKIP_IMAGES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1618,9 +1129,6 @@ func (GetObj) UnpackSkipImages() int32 {
 func (GetObj) UnpackSkipPixels() int32 {
 	var params int32
 	gl.GetIntegerv(gl.UNPACK_SKIP_PIXELS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1628,9 +1136,6 @@ func (GetObj) UnpackSkipPixels() int32 {
 func (GetObj) UnpackSkipRows() int32 {
 	var params int32
 	gl.GetIntegerv(gl.UNPACK_SKIP_ROWS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1638,9 +1143,6 @@ func (GetObj) UnpackSkipRows() int32 {
 func (GetObj) UnpackSwapBytes() bool {
 	var params bool
 	gl.GetBooleanv(gl.UNPACK_SWAP_BYTES, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1648,9 +1150,6 @@ func (GetObj) UnpackSwapBytes() bool {
 func (GetObj) NumExtensions() int32 {
 	var params int32
 	gl.GetIntegerv(gl.NUM_EXTENSIONS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1658,9 +1157,6 @@ func (GetObj) NumExtensions() int32 {
 func (GetObj) MajorVersion() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MAJOR_VERSION, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1668,9 +1164,6 @@ func (GetObj) MajorVersion() int32 {
 func (GetObj) MinorVersion() int32 {
 	var params int32
 	gl.GetIntegerv(gl.MINOR_VERSION, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1678,9 +1171,6 @@ func (GetObj) MinorVersion() int32 {
 func (GetObj) ContextFlags() int32 {
 	var params int32
 	gl.GetIntegerv(gl.CONTEXT_FLAGS, &params)
-	if safety {
-		CheckErr()
-	}
 	return params
 }
 
@@ -1688,8 +1178,5 @@ func (GetObj) ContextFlags() int32 {
 func (GetObj) Viewport() [4]int32 {
 	var params [4]int32
 	gl.GetIntegerv(gl.VIEWPORT, &params[0])
-	if safety {
-		CheckErr()
-	}
 	return params
 }
