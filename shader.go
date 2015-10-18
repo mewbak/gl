@@ -41,7 +41,7 @@ func (s Shader) Compile() {
 // Doc: https://www.opengl.org/sdk/docs/man3/xhtml/glGetShaderInfoLog.xml
 func (s Shader) GetInfoLog() string {
 	l := int32(s.GetInfoLogLength())
-	buf := make([]byte, l, l)
+	buf := make([]byte, l+1, l+1)
 	var length int32
 	gl.GetShaderInfoLog(uint32(s), l, &length, &buf[0])
 	return string(buf)
@@ -52,7 +52,7 @@ func (s Shader) GetInfoLog() string {
 // Doc: https://www.opengl.org/sdk/docs/man3/xhtml/glGetShaderSource.xml
 func (s Shader) GetSource() string {
 	l := int32(s.GetInfoLogLength())
-	buf := make([]byte, l, l)
+	buf := make([]byte, l+1, l+1)
 	var length int32
 	gl.GetShaderSource(uint32(s), l, &length, &buf[0])
 	return string(buf)

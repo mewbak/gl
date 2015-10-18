@@ -103,6 +103,15 @@ func (p Program) GetInfoLogLength() int {
 	return int(v)
 }
 
+// GetInfoLog returns the information log for a program object.
+func (p Program) GetInfoLog() string {
+	infolength := int32(p.GetInfoLogLength())
+	var actualLength int32
+	l := make([]byte, infolength+1, infolength+1)
+	gl.GetProgramInfoLog(uint32(p), infolength, &actualLength, &l[0])
+	return string(l)
+}
+
 // GetNumAttachedShaders returns the number of shader objects attached to program.
 func (p Program) GetNumAttachedShaders() int {
 	var v int32
@@ -128,9 +137,9 @@ func (p Program) GetActiveAttributeMaxLength() int {
 	return int(v)
 }
 
-// GetActiveUniforms returns the number of active uniform variables for
+// GetNumActiveUniforms returns the number of active uniform variables for
 // program.
-func (p Program) GetActiveUniforms() int {
+func (p Program) GetNumActiveUniforms() int {
 	var v int32
 	gl.GetProgramiv(uint32(p), gl.ACTIVE_UNIFORMS, &v)
 	return int(v)
@@ -155,9 +164,9 @@ func (p Program) GetTransformFeedbackBufferMode() int32 {
 	return v
 }
 
-// GetTransformFeedbackVaryings returns the number of varying variables to
+// GetNumTransformFeedbackVaryings returns the number of varying variables to
 // capture in transform feedback mode for the program.
-func (p Program) GetTransformFeedbackVaryings() int {
+func (p Program) GetNumTransformFeedbackVaryings() int {
 	var v int32
 	gl.GetProgramiv(uint32(p), gl.TRANSFORM_FEEDBACK_VARYINGS, &v)
 	return int(v)
@@ -172,9 +181,9 @@ func (p Program) GetTransformFeedbackVaryingMaxLength() int {
 	return int(v)
 }
 
-// GetGeometryVerticesOut returns the maximum number of vertices that the
+// GetNumGeometryVerticesOut returns the maximum number of vertices that the
 // geometry shader in program will output.
-func (p Program) GetGeometryVerticesOut() int {
+func (p Program) GetNumGeometryVerticesOut() int {
 	var v int32
 	gl.GetProgramiv(uint32(p), gl.GEOMETRY_VERTICES_OUT, &v)
 	return int(v)
