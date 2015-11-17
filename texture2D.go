@@ -54,16 +54,20 @@ func (Texture2D) TexImage2D(level, internalformat, width, height, border int32, 
 	gl.TexImage2D(gl.TEXTURE_2D, level, internalformat, width, height, border, format, xtype, pixels)
 }
 
-//TexParameteriv is an alias to glTexParameteri(target, pname, param)
+//TexParameteriv is an alias to glTexParameteriv(target, pname, param)
 //
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml
-func (Texture2D) TexParameteriv(target, pname uint32, param int32) {
-	gl.TexParameteri(target, pname, param)
+func (Texture2D) TexParameteriv(target, pname uint32, param *int32) {
+	gl.TexParameteriv(target, pname, param)
 }
 
-//unc (Texture2D) GetTexParameteriv(pname TetureParameterName, params *int32) {GetTexParameteriv is an alias to glGetTexParameteriv(gl.TEXTURE_2D, pname, params)
+//TexParameteri is an alias to glTexParameteri.
 //
-//Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glGetTexParameter.xml
+//Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml
+func (Texture2D) TexParameteri(pname uint32, param int32) {
+	gl.TexParameteri(gl.TEXTURE_2D, pname, param)
+}
+
 func (Texture2D) GetTexParameteriv(pname uint32, params *int32) {
 	gl.GetTexParameteriv(gl.TEXTURE_2D, pname, params)
 }
@@ -73,13 +77,6 @@ func (Texture2D) GetTexParameteriv(pname uint32, params *int32) {
 //Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml
 func (Texture2D) TexParameterf(pname uint32, param float32) {
 	gl.TexParameterf(gl.TEXTURE_2D, pname, param)
-}
-
-//TexParameteri is an alias to glTexParameteri.
-//
-//Documentation reference: https://www.opengl.org/sdk/docs/man3/xhtml/glTexParameter.xml
-func (Texture2D) TexParameteri(pname uint32, param int32) {
-	gl.TexParameteri(gl.TEXTURE_2D, pname, param)
 }
 
 //TexParameterfv is an alias to glTexParameterfv.
